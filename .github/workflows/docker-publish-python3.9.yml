@@ -1,4 +1,4 @@
-name: Docker publish python3.11
+name: Docker publish python3.9
 'on':
   push:
     tags:
