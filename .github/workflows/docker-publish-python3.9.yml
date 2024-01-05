@@ -24,7 +24,7 @@ jobs:
         run: |
           REG=ghcr.io
           IMAGE=$(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]')
-          DOCKER_IMAGE=${REG}/${IMAGE}-python3.9
+          DOCKER_IMAGE=${REG}/${IMAGE}-3.9
           VERSION=nool
           if [ "${{ github.event_name }}" = "schedule" ]; then
             VERSION=nightly
