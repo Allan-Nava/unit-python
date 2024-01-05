@@ -1,4 +1,4 @@
-FROM python:3.10-bullseye
+FROM python:3.12-bullseye
 
 LABEL org.opencontainers.image.title="Unit (python3.10)"
 LABEL org.opencontainers.image.description="build of Unit for Docker."
