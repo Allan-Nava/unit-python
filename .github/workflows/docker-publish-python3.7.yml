@@ -1,4 +1,4 @@
-name: Docker publish python3.8
+name: Docker publish python3.7
 'on':
   push:
     tags:
@@ -24,7 +24,7 @@ jobs:
         run: |
           REG=ghcr.io
           IMAGE=$(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]')
-          DOCKER_IMAGE=${REG}/${IMAGE}-3.8
+          DOCKER_IMAGE=${REG}/${IMAGE}-3.7
           VERSION=nool
           if [ "${{ github.event_name }}" = "schedule" ]; then
             VERSION=nightly
@@ -59,7 +59,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          file: ./Dockerfile.python3.8
+          file: ./Dockerfile.python3.7
           platforms: linux/amd64
           push: true
           tags: '${{ steps.prep.outputs.tags }}'
